@@ -1,4 +1,4 @@
-package com.andrejka.dictionary.service;
+package com.andrejka.dictionary;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.andrejka.dictionary.Words;
+import com.andrejka.dictionary.service.MongoService;
 
 @RestController
 @RequestMapping("/words")

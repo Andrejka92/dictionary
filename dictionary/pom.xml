@@ -8,11 +8,11 @@
 		<version>2.6.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.stocksradar</groupId>
+	<groupId>com.dictionary</groupId>
 	<artifactId>dictionary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>stockinvest</name>
-	<description>Invest helper</description>
+	<description>English dictionary</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -44,22 +44,6 @@
 			<scope>test</scope>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-		<dependency>
-		    <groupId>io.github.bonigarcia</groupId>
-		    <artifactId>webdrivermanager</artifactId>
-		    <version>5.0.3</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>javax.mail</groupId>
-		    <artifactId>javax.mail-api</artifactId>
-		    </dependency>
-		<dependency>
-		    <groupId>com.sun.mail</groupId>
-		    <artifactId>javax.mail</artifactId>
-		    <version>1.6.2</version>
-		</dependency>
 	<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 		    <groupId>org.json</groupId>
@@ -70,11 +54,11 @@
 
 	<build>
 		<plugins>
-		  <plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
 		    <artifactId>maven-compiler-plugin</artifactId>
 		    <configuration>
-		      <source>17</source>
-		      <target>17</target>
+		      <release>17</release>
 		    </configuration>
 		  </plugin>
 		  <plugin>
