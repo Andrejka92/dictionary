@@ -14,7 +14,7 @@ public class Words {
     @Id
     private String id;
 
-    private String wordEN;
+    private String wordENG;
     private String wordLT;
     private String wordRU;
     private String sentanceWithThisWord;
