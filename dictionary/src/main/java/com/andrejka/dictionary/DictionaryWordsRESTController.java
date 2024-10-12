@@ -16,7 +16,7 @@ import com.andrejka.dictionary.service.MongoService;
 
 @RestController
 @RequestMapping("/words")
-public class DictionaryRESTController {
+public class DictionaryWordsRESTController {
 
     @Autowired
     private MongoService mongoService;
@@ -26,7 +26,7 @@ public class DictionaryRESTController {
     public void addWord(@RequestParam("wordENG") String wordENG, @RequestParam("wordLT") String wordLT,
             @RequestParam("wordRU") String wordRU, @RequestParam("sentanceWithThisWord") String sentanceWithThisWord) {
         Words word = new Words();
-        word.setWordEN(wordENG);
+        word.setWordENG(wordENG);
         word.setWordLT(wordLT);
         word.setWordRU(wordRU);
         word.setSentanceWithThisWord(sentanceWithThisWord);
