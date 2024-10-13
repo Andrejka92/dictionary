@@ -24,12 +24,12 @@ public class DictionaryWordsRESTController {
     @CrossOrigin(origins = "*")
     @PostMapping("/addWord")
     public void addWord(@RequestParam("wordENG") String wordENG, @RequestParam("wordLT") String wordLT,
-            @RequestParam("wordRU") String wordRU, @RequestParam("sentenceWithThisWord") String sentenceWithThisWord) {
+            @RequestParam("wordRU") String wordRU, @RequestParam("sentence") String sentence) {
         Words word = new Words();
         word.setWordENG(wordENG);
         word.setWordLT(wordLT);
         word.setWordRU(wordRU);
-        word.setSentenceWithThisWord(sentenceWithThisWord);
+        word.setSentence(sentence);
         mongoService.saveWord(word);
     }
 

@@ -17,5 +17,5 @@ public class Words {
     private String wordENG;
     private String wordLT;
     private String wordRU;
-    private String sentenceWithThisWord;
+    private String sentence;
 }
