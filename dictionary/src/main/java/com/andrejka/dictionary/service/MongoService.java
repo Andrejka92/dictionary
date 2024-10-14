@@ -73,10 +73,19 @@ public class MongoService {
             // Create a new map with all entries converted to String
             Map<String, String> stringMap = new HashMap<>();
             document.forEach((key, value) -> {
-                stringMap.put((String) key, value != null ? value.toString() : ""); // Convert to String
+                stringMap.put((String) key, value != null ? value.toString() : "");
             });
             return stringMap;
         }).collect(Collectors.toList());
     }
 
+    public void updateWord(Words word) {
+        mongoTemplate.save(word);
+    }
+
+    public Words findWordById(String id) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(id));
+        return mongoTemplate.findOne(query, Words.class);
+    }
 }
