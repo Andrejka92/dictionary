@@ -62,8 +62,7 @@ public class MongoService {
 
         // Create an aggregation with $sample to randomly select 'count' documents
         Aggregation aggregation = Aggregation.newAggregation(Aggregation.sample(count),
-                Aggregation.project(selectedField, "wordENG") // Only include the selected language field and wordENG
-        );
+                Aggregation.project(selectedField, "wordENG", "sentence"));
 
         // Execute the aggregation query and return List<Object>
         AggregationResults<Map> results = mongoTemplate.aggregate(aggregation, "words", Map.class);

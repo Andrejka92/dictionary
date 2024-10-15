@@ -25,7 +25,15 @@ public class DictionaryQuizRESTController {
     @GetMapping("/getQuizWords")
     public List<Map<String, String>> getQuizWords(@RequestParam("count") Integer count,
             @RequestParam("language") String language) {
-        return mongoService.getRandomWords(count, language);
+        List<Map<String, String>> randomWords = mongoService.getRandomWords(count, language);
+        for (Map<String, String> word : randomWords) {
+            String wordENG = word.get("wordENG");
+            String sentence = word.get("sentence");
+            String modifiedSentence = sentence.replaceAll("(?i)" + wordENG, "_______");
+            word.put("sentence", modifiedSentence);
+        }
+
+        return randomWords;
     }
 
     @CrossOrigin(origins = "*")
